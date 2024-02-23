@@ -1,4 +1,3 @@
-'use client';
 import Fields from "@/components/Fields/Fields";
 
 const TableBody = () => {

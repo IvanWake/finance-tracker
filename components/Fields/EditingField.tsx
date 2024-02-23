@@ -6,20 +6,13 @@ type Props = {
     onSave: () => void,
 }
 
-const EditingField = ({initialValue, onSave}: Props) => {
+const EditingField = ({initialValue}: Props) => {
     const [fieldValue, setFieldValue] = useState(initialValue);
     const [isEditing, setIsEditing] = useState(false);
 
     const handleDoubleClick = () => setIsEditing(true);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setFieldValue(e.target.value);
-    };
-
-    const handleBlur = () => {
-        setIsEditing(false);
-        onSave(fieldValue);
-    };
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setFieldValue(e.target.value);
+    const handleBlur = () => setIsEditing(false)
 
     return (
         <>
