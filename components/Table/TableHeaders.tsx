@@ -4,7 +4,7 @@ type Props = {
 
 const TableHeaders = ({tHeads}: Props) => {
     return (
-        <thead>
+        <thead className="bg-white border-b">
         <tr>
             {
                 tHeads.map(header => (
