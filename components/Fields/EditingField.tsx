@@ -12,7 +12,7 @@ const EditingField = ({initialValue, onSave}: Props) => {
 
     const handleDoubleClick = () => setIsEditing(true);
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFieldValue(e.target.value);
     };
 
@@ -28,7 +28,7 @@ const EditingField = ({initialValue, onSave}: Props) => {
                     <input
                         type="text"
                         size="3.5"
-                        className="focus: outline-none"
+                        className="focus: outline-none bg-black text-white"
                         value={fieldValue}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -37,7 +37,7 @@ const EditingField = ({initialValue, onSave}: Props) => {
                 ) : (
                     <td
                         onDoubleClick={handleDoubleClick}
-                        className="text-center">
+                        className="text-center px-4">
                         {fieldValue}
                     </td>
                 )

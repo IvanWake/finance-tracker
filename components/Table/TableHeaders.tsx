@@ -4,13 +4,13 @@ type Props = {
 
 const TableHeaders = ({tHeads}: Props) => {
     return (
-        <thead className="bg-white border-b">
+        <thead className="bg-black border-b text-[#ccc]">
         <tr>
             {
                 tHeads.map(header => (
                     <th
                         key={"tHead " + tHeads.indexOf(header)}
-                        className="p-2 font-medium"
+                        className="px-2 font-medium"
                     >
                         {header}
                     </th>
