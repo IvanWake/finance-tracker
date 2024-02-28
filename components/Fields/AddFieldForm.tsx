@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useTracks } from "@/store/tracks-store";
 
 type Props = {
-    onAddField: () => void
+    onHideForm: () => void
 }
 
 type FormFields = {
@@ -15,7 +15,7 @@ type FormFields = {
     amount: number,
 };
 
-const AddFieldForm = ({onAddField}: Props) => {
+const AddFieldForm = ({ onHideForm }: Props) => {
     const {
         handleSubmit,
         register
@@ -31,7 +31,7 @@ const AddFieldForm = ({onAddField}: Props) => {
                 currency: fields.fieldCurrency,
                 amount: fields.fieldAmount,
             });
-        onAddField();
+        onHideForm();
     }
 
     return (
@@ -94,6 +94,12 @@ const AddFieldForm = ({onAddField}: Props) => {
                 type="submit"
                 className="bg-white rounded-full py-2 px-4 text-black font-medium">
                 Add Field
+            </button>
+            <button
+                type="button"
+                onClick={() => onHideForm()}
+                className="bg-white rounded-full py-2 px-4 text-black font-medium">
+                &#8656; Cancel
             </button>
         </form>
     );

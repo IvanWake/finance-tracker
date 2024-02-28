@@ -5,16 +5,16 @@ import AddFieldForm from "@/components/Fields/AddFieldForm";
 const AddField = () => {
     const [isFormVisible, setIsFormVisible] = useState(false);
 
-    const addFieldHandler = () =>
+    const hideFormHandler = () =>
         setIsFormVisible(prevState => !prevState);
     return (
         <>
 
             { isFormVisible ?
-                <AddFieldForm onAddField={addFieldHandler} /> :
+                <AddFieldForm onHideForm={hideFormHandler} /> :
                 <button
                     type="button"
-                    onClick={addFieldHandler}
+                    onClick={hideFormHandler}
                     className="bg-white rounded-full py-2 px-4 text-black font-medium">
                     Add Field
                 </button>
