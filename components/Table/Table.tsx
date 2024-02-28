@@ -6,7 +6,7 @@ const Table = () => {
     const tHeads: string[] = [
         'Type', 'Frequency', 'Managed in',
         'Paid with', 'Currency', 'Amount'
-    ];
+    ]
 
     return (
         <div className="flex flex-col">

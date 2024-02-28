@@ -1,6 +1,4 @@
-'use client';
 import EditingField from "@/components/Fields/EditingField";
-import { useState } from "react";
 
 type Props = {
     type: string,
@@ -13,7 +11,7 @@ type Props = {
 
 const Field = ({type, frequency, managedIn, paidWith, currency, amount}: Props) => {
     return (
-        <tr>
+        <tr className="border-b border-l border-r text-center">
             <EditingField initialValue={type} />
             <EditingField initialValue={frequency} />
             <EditingField initialValue={managedIn} />

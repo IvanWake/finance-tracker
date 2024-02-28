@@ -21,7 +21,7 @@ const EditingField = ({initialValue}: Props) => {
                     <input
                         type="text"
                         size="3.5"
-                        className="focus: outline-none bg-black text-white"
+                        className="focus: outline-none bg-black text-white text-center"
                         value={fieldValue}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -30,7 +30,7 @@ const EditingField = ({initialValue}: Props) => {
                 ) : (
                     <td
                         onDoubleClick={handleDoubleClick}
-                        className="text-center px-4">
+                        className="text-center px-4 border-r border-l">
                         {fieldValue}
                     </td>
                 )
