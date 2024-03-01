@@ -35,8 +35,8 @@ const AddFieldForm = ({ onHideForm }: Props) => {
     }
 
     return (
-        <form className="flex flex-col space-y-2 my-2 text-white text-center" onSubmit={handleSubmit(submitHandler)}>
-            <div className="flex space-x-2 justify-center items-center">
+        <form className="flex flex-col justify-center space-y-2 my-2 text-white text-center border-white border-[1px] p-4" onSubmit={handleSubmit(submitHandler)}>
+            <div className="flex space-x-2 justify-between items-center">
                 <label htmlFor="type">Type</label>
                 <input
                     {...register('fieldType', {required: true})}
@@ -45,16 +45,18 @@ const AddFieldForm = ({ onHideForm }: Props) => {
                     type="text"
                 />
             </div>
-            <div className="flex space-x-2 justify-center items-center">
-                <label htmlFor="frequency">Frequency</label>
-                <input
+            <div className="flex space-x-2 justify-between items-center">
+                <label>Frequency</label>
+                <select
                     {...register('fieldFrequency', {required: true})}
-                    id="frequency"
-                    className="px-2 py-1 border-b-white border-b-[1px] focus:outline-none bg-black"
-                    type="text"
-                />
+                    className="appearance-none outline-none rounded-full bg-amber-500 px-[1.7rem]">
+                    <option value="Day">Day</option>
+                    <option value="Week">Week</option>Month
+                    <option value="Month">Month</option>
+                    <option value="Year">Year</option>
+                </select>
             </div>
-            <div className="flex space-x-2 justify-center items-center">
+            <div className="flex space-x-2 justify-between items-center">
                 <label htmlFor="managedIn">Managed in</label>
                 <input
                     {...register('fieldManagedIn', {required: true})}
@@ -63,7 +65,7 @@ const AddFieldForm = ({ onHideForm }: Props) => {
                     type="text"
                 />
             </div>
-            <div className="flex space-x-2 justify-center items-center">
+            <div className="flex space-x-2 justify-between items-center">
                 <label htmlFor="paidWith">Paid With</label>
                 <input
                     {...register('fieldPaidWith', {required: true})}
@@ -72,16 +74,16 @@ const AddFieldForm = ({ onHideForm }: Props) => {
                     type="text"
                 />
             </div>
-            <div className="flex space-x-2 justify-center items-center">
-                <label htmlFor="currency">Currency</label>
-                <input
+            <div className="flex space-x-2 justify-between items-baseline">
+                <label>Currency</label>
+                <select
                     {...register('fieldCurrency', {required: true})}
-                    id="currency"
-                    className="px-2 py-1 border-b-white border-b-[1px] focus:outline-none bg-black"
-                    type="text"
-                />
+                    className="appearance-none outline-none rounded-full bg-amber-500 px-[1.7rem]">
+                    <option value="USD">USD</option>
+                    <option value="RUB">RUB</option>
+                </select>
             </div>
-            <div className="flex space-x-2 justify-center items-center">
+            <div className="flex space-x-2 justify-between items-center">
                 <label htmlFor="amount">Amount</label>
                 <input
                     {...register('fieldAmount', {required: true})}

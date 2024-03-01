@@ -21,7 +21,7 @@ export const useTracks = create<Tracks>()((set) => ({
             frequency: 'string',
             managedIn: 'string',
             paidWith: 'string',
-            currency: 'string',
+            currency: 'USD',
             amount: 123,
         },
         {
@@ -29,7 +29,7 @@ export const useTracks = create<Tracks>()((set) => ({
             frequency: 'string1',
             managedIn: 'string1',
             paidWith: 'string1',
-            currency: 'string1',
+            currency: 'RUB',
             amount: 22,
         },
         {
@@ -37,7 +37,7 @@ export const useTracks = create<Tracks>()((set) => ({
             frequency: 'string2',
             managedIn: 'string2',
             paidWith: 'string2',
-            currency: 'string2',
+            currency: 'USD',
             amount: 228,
         },
     ],
