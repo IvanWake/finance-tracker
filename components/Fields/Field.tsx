@@ -1,6 +1,7 @@
 import EditingField from "@/components/Fields/EditingField";
 
 type Props = {
+    name: string,
     type: string,
     frequency: string,
     managedIn: string,
@@ -11,6 +12,7 @@ type Props = {
 
 const Field = (
     {
+        name,
         type,
         frequency,
         managedIn,
@@ -20,6 +22,7 @@ const Field = (
     }: Props) => {
     return (
         <tr className="border-b border-l border-r text-center">
+            <EditingField initialValue={name}/>
             <EditingField initialValue={type}/>
             <EditingField initialValue={frequency}/>
             <EditingField initialValue={managedIn}/>

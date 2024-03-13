@@ -39,13 +39,13 @@ const EditingField = ({initialValue, isCurrency}: Props) => {
                                 value={fieldValue}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                autoFocus // Поле в фокусе сразу после рендера
+                                autoFocus
                             />
                         </td>
                     ) : isCurrency ? (
                         <td
                             onClick={handleDoubleClick}
-                            className={styleField + " bg-amber-500 rounded-full"}>
+                            className={styleField + " bg-amber-500"}>
                             {fieldValue}
                         </td>
                     ) : (

@@ -8,7 +8,7 @@ const SelectCurrency = ({ handleBlur, handleChange, selectedCurrency }: Props) =
     return (
         <select
             value={selectedCurrency}
-            className="appearance-none outline-none rounded-full bg-amber-500 px-[1.7rem] py-[1px]"
+            className="appearance-none outline-none bg-amber-500 px-[1.7rem] py-[1px]"
             onBlur={handleBlur}
             onChange={handleChange}>
             <option onClick={handleBlur} value="USD">USD</option>

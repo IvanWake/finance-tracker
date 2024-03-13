@@ -8,6 +8,7 @@ const Fields = () => {
                 tracks.map(track => (
                     <Field
                         key={'fId ' + Math.random()}
+                        name={track.name}
                         type={track.type}
                         frequency={track.frequency}
                         managedIn={track.managedIn}
