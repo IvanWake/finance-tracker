@@ -22,7 +22,7 @@ const AddFieldForm = ({ onHideForm }: Props) => {
     } = useForm<FormFields>();
     const { addTrack } = useTracks();
 
-    const submitHandler = (fields) => {
+    const submitHandler = (fields: FormFields) => {
         addTrack({
                 name: fields.fieldName,
                 type: fields.fieldType,
