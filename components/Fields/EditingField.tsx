@@ -1,19 +1,20 @@
 'use client';
-import {useState} from 'react';
+import { ChangeEvent } from "react";
+import { useState } from 'react';
 import SelectCurrency from "@/components/Layout/SelectCurrency";
 
 type Props = {
     initialValue: string | number,
-    onSave: () => void,
-    isCurrency?: string,
+    isCurrency?: boolean,
 }
 
-const EditingField = ({initialValue, isCurrency}: Props) => {
+const EditingField = ({ initialValue, isCurrency }: Props) => {
     const [fieldValue, setFieldValue] = useState(initialValue);
     const [isEditing, setIsEditing] = useState(false);
 
     const handleDoubleClick = () => setIsEditing(true);
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setFieldValue(e.target.value);
+    const handleChange = (e: ChangeEvent<HTMLSelectElement>) => setFieldValue(e.target.value);
+    const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => setFieldValue(e.target.value);
     const handleBlur = () => setIsEditing(false)
 
     const styleField = "text-center px-4 border-r border-l";
@@ -34,18 +35,18 @@ const EditingField = ({initialValue, isCurrency}: Props) => {
                         <td>
                             <input
                                 type="text"
-                                size="3.5"
+                                size={3.5}
                                 className="outline-none bg-black text-white text-center"
                                 value={fieldValue}
-                                onChange={handleChange}
+                                onChange={handleChangeInput}
                                 onBlur={handleBlur}
-                                autoFocus // Поле в фокусе сразу после рендера
+                                autoFocus
                             />
                         </td>
                     ) : isCurrency ? (
                         <td
                             onClick={handleDoubleClick}
-                            className={styleField + " bg-amber-500 rounded-full"}>
+                            className={styleField + " bg-amber-500"}>
                             {fieldValue}
                         </td>
                     ) : (

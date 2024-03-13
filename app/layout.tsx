@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Next Service",
-  description: "App For Study Next.js",
+  title: "Finance Tracker",
+  description: "App for analyze Finances",
 };
 export default function RootLayout({
   children,

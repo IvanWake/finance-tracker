@@ -5,8 +5,11 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+<<<<<<< HEAD
 .env
 /.idea
+=======
+>>>>>>> 44abe9377136b7f834db77106052d51cec6ce2dd
 
 # testing
 /coverage
