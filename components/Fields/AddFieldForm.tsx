@@ -15,6 +15,16 @@ type FormFields = {
     amount: number,
 }
 
+type AddingFields = {
+    fieldName: string,
+    fieldType: string,
+    fieldFrequency: string,
+    fieldManagedIn: string,
+    fieldPaidWith: string,
+    fieldCurrency: string,
+    fieldAmount: number,
+}
+
 const AddFieldForm = ({ onHideForm }: Props) => {
     const {
         handleSubmit,
@@ -22,7 +32,7 @@ const AddFieldForm = ({ onHideForm }: Props) => {
     } = useForm<FormFields>();
     const { addTrack } = useTracks();
 
-    const submitHandler = (fields: FormFields) => {
+    const submitHandler = (fields: AddingFields) => {
         addTrack({
                 name: fields.fieldName,
                 type: fields.fieldType,
