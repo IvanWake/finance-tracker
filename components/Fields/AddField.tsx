@@ -7,6 +7,7 @@ const AddField = () => {
 
     const hideFormHandler = () =>
         setIsFormVisible(prevState => !prevState);
+
     return (
         <>
 

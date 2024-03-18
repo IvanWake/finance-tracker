@@ -1,7 +1,7 @@
 'use client';
 import TableHeaders from "@/components/Table/TableHeaders";
 import TableBody from "@/components/Table/TableBody";
-import {useTracks} from "@/store/tracks-store";
+import { useTracks } from "@/store/tracks-store";
 
 const Table = () => {
     const { tracks } = useTracks();

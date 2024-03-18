@@ -12,12 +12,13 @@ const EditingField = ({ initialValue, isCurrency }: Props) => {
     const [fieldValue, setFieldValue] = useState(initialValue);
     const [isEditing, setIsEditing] = useState(false);
 
+    const styleField = "text-center px-4 border-r border-l";
+
     const handleDoubleClick = () => setIsEditing(true);
-    const handleChange = (e: ChangeEvent<HTMLSelectElement>) => setFieldValue(e.target.value);
-    const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => setFieldValue(e.target.value);
     const handleBlur = () => setIsEditing(false)
 
-    const styleField = "text-center px-4 border-r border-l";
+    const handleChange = (e: ChangeEvent<HTMLSelectElement>) => setFieldValue(e.target.value);
+    const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => setFieldValue(e.target.value);
 
     return (
         <>

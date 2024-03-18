@@ -12,7 +12,7 @@ const TableHeaders = ({tHeads}: Props) => {
                         key={"tHead " + tHeads.indexOf(header)}
                         className="px-2 font-medium"
                     >
-                        {header}
+                        { header }
                     </th>
                 ))
             }

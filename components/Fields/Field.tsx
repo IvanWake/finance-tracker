@@ -27,8 +27,8 @@ const Field = (
             <EditingField initialValue={frequency}/>
             <EditingField initialValue={managedIn}/>
             <EditingField initialValue={paidWith}/>
-            <EditingField initialValue={currency} isCurrency={true}/>
-            <EditingField initialValue={amount}/>
+            <EditingField initialValue={currency} isCurrency={true} />
+            <EditingField initialValue={amount} />
         </tr>
     );
 }

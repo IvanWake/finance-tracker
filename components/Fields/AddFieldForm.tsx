@@ -52,7 +52,7 @@ const AddFieldForm = ({ onHideForm }: Props) => {
                 <label>Type</label>
                 <select
                     {...register('fieldType', {required: true})}
-                    className="appearance-none outline-none rounded-full bg-amber-500 px-[0.8rem] pb-[0.2   rem] text-center">
+                    className="appearance-none outline-none rounded-full bg-amber-500 px-[0.8rem] pb-[0.2rem] text-center">
                     <option value="Software">Software</option>
                     <option value="Programming">Programming</option>Month
                     <option value="Music">Music</option>
