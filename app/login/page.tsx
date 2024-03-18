@@ -1,10 +1,9 @@
-import Table from "@/components/Table/Table";
-import AddField from "@/components/Fields/AddField";
+import LogInForm from "@/components/Auth/LogInForm";
 
 const LogIn = () => {
     return (
-        <div className="flex flex-col items-center justify-between p-4">
-            <h1>Log In</h1>
+        <div className="flex flex-col items-center justify-center py-8 space-y-5 h-[100vh] w-full">
+            <LogInForm />
         </div>
     );
 }

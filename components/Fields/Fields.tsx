@@ -1,7 +1,9 @@
-import Field from "@/components/Fields/Field";
 import { useTracks } from "@/store/tracks-store";
+import Field from "@/components/Fields/Field";
+
 const Fields = () => {
     const { tracks } = useTracks();
+
     return (
         <>
             {
@@ -15,7 +17,6 @@ const Fields = () => {
                         paidWith={track.paidWith}
                         currency={track.currency}
                         amount={track.amount}
-
                     />
                 ))
             }

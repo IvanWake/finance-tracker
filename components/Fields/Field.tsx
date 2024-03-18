@@ -18,18 +18,21 @@ const Field = (
         managedIn,
         paidWith,
         currency,
-        amount
+        amount,
     }: Props) => {
+
     return (
-        <tr className="border-b border-l border-r text-center">
-            <EditingField initialValue={name}/>
-            <EditingField initialValue={type}/>
-            <EditingField initialValue={frequency}/>
-            <EditingField initialValue={managedIn}/>
-            <EditingField initialValue={paidWith}/>
-            <EditingField initialValue={currency} isCurrency={true} />
-            <EditingField initialValue={amount} />
-        </tr>
+        <>
+            <tr className="border-b border-l border-r text-center">
+                <EditingField initialValue={name}/>
+                <EditingField initialValue={type}/>
+                <EditingField initialValue={frequency}/>
+                <EditingField initialValue={managedIn}/>
+                <EditingField initialValue={paidWith}/>
+                <EditingField initialValue={currency} isCurrency={true}/>
+                <EditingField initialValue={amount}/>
+            </tr>
+        </>
     );
 }
 
