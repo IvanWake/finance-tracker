@@ -39,7 +39,7 @@ const LogInForm = () => {
                         autoComplete="off"
                         className="outline-none border-b-[1px] text-white bg-black"
                     />
-                    { errors.loginEmail && <p>{errors.loginEmail.message}</p> }
+                    { errors.loginEmail && <p className="text-[#FA8072]">{errors.loginEmail.message}</p> }
                 </div>
                 <div className="flex flex-col space-y-2">
                     <label htmlFor="password">Password</label>
@@ -52,9 +52,10 @@ const LogInForm = () => {
                         } )}
                         id="password"
                         type="password"
+                        autoComplete="off"
                         className="outline-none border-b-[1px] text-white bg-black"
                     />
-                    { errors.loginPass && <p>{errors.loginPass?.message}</p> }
+                    { errors.loginPass && <p className="text-[#FA8072]">{errors.loginPass.message}</p> }
                 </div>
                 <button type="submit" className="py-4">
                     <AuthButton content="Log In" addingStyles="text-black bg-white px-6 border-[1px] text-xl
