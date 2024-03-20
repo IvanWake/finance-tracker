@@ -1,5 +1,6 @@
 'use client';
 import AuthButton from "@/components/Auth/AuthButton";
+import Link from "next/link";
 
 const SignUpForm = () => {
     return (
@@ -15,9 +16,10 @@ const SignUpForm = () => {
                     <input id="password" type="password" className="outline-none border-b-[1px] text-white bg-black" />
                 </div>
                 <button type="submit" className="py-4">
-                    <AuthButton content="Log In" addingStyles="text-black bg-white px-6 border-[1px] text-xl
+                    <AuthButton content="Sign Up" addingStyles="text-black bg-white px-6 border-[1px] text-xl
                         font-medium hover:bg-black hover:text-white"/>
                 </button>
+                <p>Already have account? <Link href="/login"><span className="font-medium underline">Log In</span></Link></p>
             </div>
 
         </form>
