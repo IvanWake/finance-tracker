@@ -1,23 +1,47 @@
 'use client';
-import {SubmitHandler, useForm} from "react-hook-form";
-import AuthButton from "@/components/Auth/AuthButton";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useAuth } from "@/store/auth-store";
+import { createUserWithEmailAndPassword, onAuthStateChanged } from "@firebase/auth";
+import { auth  } from "@/firebase";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
+import AuthButton from "@/components/Auth/AuthButton";
 
 type Inputs = {
-    loginEmail: string,
-    loginPass: string,
+    signupEmail: string,
+    signupPass: string,
 }
 
 const SignUpForm = () => {
-
+    const { setUser, setIsUserAuth } = useAuth();
+    const router = useRouter();
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors }
     } = useForm<Inputs>({ mode: "onBlur" });
 
-    const onSubmitHandler: SubmitHandler<Inputs> = (loginData) => {
-        console.log(loginData);
+
+
+    const registerUserHandler = (email, password) => {
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(({user}) => {
+                setUser({
+                    id: user.uid,
+                    email: user.email,
+                    password: user.password
+                });
+                setIsUserAuth(true);
+                reset();
+                router.push("/");
+            }).catch((error) => {
+                console.log(error);
+        })
+    }
+
+    const onSubmitHandler: SubmitHandler<Inputs> = (signUpData) => {
+        registerUserHandler(signUpData.signupEmail, signUpData.signupPass);
     }
 
     return (

@@ -101,7 +101,10 @@ const AddFieldForm = ({ onHideForm }: Props) => {
             <div className="flex space-x-2 justify-between items-center">
                 <label htmlFor="amount">Amount</label>
                 <input
-                    {...register('fieldAmount', {required: true})}
+                    {...register('fieldAmount', { required: true, validate: {
+                        positive: v => parseInt(v) > 0
+                    }
+                    })}
                     id="amount"
                     className="px-2 py-1 border-b-white border-b-[1px] focus:outline-none bg-black"
                     type="number"

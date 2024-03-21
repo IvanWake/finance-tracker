@@ -13,6 +13,7 @@ const Content = () => {
                 isUserAuth ?
                     <>
                         <Table/>
+
                         <AddField/>
                     </> :
                     <AuthBlock/>
