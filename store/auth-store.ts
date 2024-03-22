@@ -1,10 +1,8 @@
 import { create } from "zustand";
-import { auth } from "@/firebase";
 
 type User = {
     email: string,
-    password: string,
-    uid: string,
+    id: string,
 }
 
 type Auth = {
