@@ -1,8 +1,23 @@
+'use client';
+
+import { useEffect } from "react";
+import { updateUserTracks } from "@/service/http-service";
 import { useTracks } from "@/store/tracks-store";
+import { useAuth } from "@/store/auth-store";
 import Field from "@/components/Fields/Field";
 
 const Fields = () => {
     const { tracks } = useTracks();
+    const { user } = useAuth();
+
+    useEffect(() => {
+        if (user.id) {
+            if (tracks.length > 0) {
+                updateUserTracks(user.id, tracks);
+            }
+        }
+    }, [tracks]);
+
 
     return (
         <>

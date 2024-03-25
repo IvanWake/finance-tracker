@@ -6,6 +6,7 @@ import {auth} from "@/firebase";
 import {useRouter} from "next/navigation";
 import Link from "next/link";
 import AuthButton from "@/components/Auth/AuthButton";
+import {createUserTracks} from "@/service/http-service";
 
 type Inputs = {
     signupEmail: string,
@@ -31,6 +32,7 @@ const SignUpForm = () => {
                         id: user.uid,
                         email: user.email,
                     })
+                    createUserTracks(user.uid, []);
                     setIsUserAuth(true);
                     reset();
                     router.push("/");

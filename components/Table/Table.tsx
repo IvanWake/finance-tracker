@@ -6,7 +6,6 @@ import { useAuth } from "@/store/auth-store";
 
 const Table = () => {
     const { tracks } = useTracks();
-    const { user } = useAuth();
     const tHeads: string[] = [
         'Name', 'Type', 'Frequency', 'Managed in',
         'Paid with', 'Currency', 'Amount'

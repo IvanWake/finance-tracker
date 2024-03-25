@@ -1,6 +1,9 @@
 'use client';
 import { useForm } from "react-hook-form";
 import { useTracks } from "@/store/tracks-store";
+import { useAuth } from "@/store/auth-store";
+import { createUserTracks } from "@/service/http-service";
+
 
 type Props = {
     onHideForm: () => void
@@ -16,24 +19,37 @@ type AddingFields = {
     fieldAmount: string,
 }
 
-
 const AddFieldForm = ({ onHideForm }: Props) => {
+    const { addTrack, tracks } = useTracks();
+    const { user } = useAuth();
+
     const {
         handleSubmit,
         register
     } = useForm<AddingFields>();
-    const { addTrack } = useTracks();
+
+
+
+    const addTrackHandler = async(track) => {
+        if (tracks.length > 0) {
+            addTrack(track);
+        } else {
+            addTrack(track);
+            createUserTracks(user.id, tracks);
+        }
+    }
 
     const submitHandler = (fields: AddingFields) => {
-        addTrack({
-                name: fields.fieldName,
-                type: fields.fieldType,
-                frequency: fields.fieldFrequency,
-                managedIn: fields.fieldManagedIn,
-                paidWith: fields.fieldPaidWith,
-                currency: fields.fieldCurrency,
-                amount: parseFloat(fields.fieldAmount),
-            });
+        const track = {
+            name: fields.fieldName,
+            type: fields.fieldType,
+            frequency: fields.fieldFrequency,
+            managedIn: fields.fieldManagedIn,
+            paidWith: fields.fieldPaidWith,
+            currency: fields.fieldCurrency,
+            amount: parseFloat(fields.fieldAmount),
+        }
+        addTrackHandler(track);
         onHideForm();
     }
 
